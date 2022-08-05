@@ -1,0 +1,3 @@
+// arquivo que nao sobe para o gi, que nao quer que seja adicionado 
+.env
+vendor 
