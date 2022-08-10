@@ -1,18 +1,12 @@
 <?php
-
-function dd($input){
-    var_dump($input);
-    die();
-}
-
-
+//dd(__DIR__); //metofd magico a posicao do diretorio,
 
 $mainPosition = __DIR__;
 
-require_once("{mainPosition}\bootstrap\Env.php");
+require_once("{$mainPosition}\bootstrap\Env.php");
+require_once("{$mainPosition}\helper\helper.php");
 
-$env = new Env();
+Env::execute();
 
-dd($env);
+dd($_ENV['DB_HOST']);
 
-//dd(__DIR__); //metofd magico a posicao do diretorio,
