@@ -3,10 +3,14 @@
 
 $mainPosition = __DIR__;
 
-require_once("{$mainPosition}\bootstrap\Env.php");
+
 require_once("{$mainPosition}\helper\helper.php");
+require_once("{$mainPosition}\\vendor\autoload.php");
+
+use Bootstrap\Env;
+use App\FrameworkTools\ProcessServerElements;
 
 Env::execute();
 
-dd($_ENV['DB_HOST']);
-
+$processServerElements = ProcessServerElements::start();
+dd($processServerElements);
