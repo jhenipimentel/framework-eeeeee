@@ -7,7 +7,7 @@ use App\FrameworkTools\ProcessServerElements;
 use App\FrameworkTools\Implementation\FactoryMethods\BreakStringInVars;
 
 class FactoryProcessServerElement extends AbstractFactoryMethods{
-    use BreakStringVars;
+    use BreakStringInVars;
 
     private $processServerElements;
 
@@ -21,7 +21,11 @@ class FactoryProcessServerElement extends AbstractFactoryMethods{
         $this->processServerElements->setHttpHost($_SERVER['HTTP_HOST']);
         $this->processServerElements->setUri($_SERVER['REQUEST_URI']);
 
-        $this->breakStringInVars('qçwkfnoqwjnfowqnd');
+        $variables = $this->breakStringInVars($_SERVER['REQUEST_URI']);
+
+
+        $this->processServerElements->setVariables($variables);
+        $this->processServerElements->setVerb($_SERVER["REQUEST_METHOD"]);
         dd($this->processServerElements);
     }
 }

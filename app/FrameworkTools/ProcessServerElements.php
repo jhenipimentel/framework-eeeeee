@@ -9,7 +9,8 @@ class ProcessServerElements{
     private $serverName;
     private $httpHost;
     private $uri;
-    private $variable;
+    private $variables;
+    private $verb;
 
 
     private function __construct(){
@@ -34,34 +35,42 @@ class ProcessServerElements{
     }
 
     public function setServerName($serverName){
-        $this->$serverName = $serverName;
+        $this->serverName = $serverName;
     }
 
     public function getServerName(){
-        return $this->ServerName;
+        return $this->serverName;
     }
 
     public function setHttpHost($httpHost){
-        $this->$httpHost = $httpHost;
+        $this->httpHost = $httpHost;
     }
 
     public function getHttpHost(){
-        return $this->$httpHost;
+        return $this->httpHost;
     }
 
     public function setUri($uri){
-        $this->$uri = $uri;
+        $this->uri = $uri;
     }
 
     public function getUri(){
-        return $this->$uri;
+        return $this->uri;
     }
 
-    public function setVariable($variable){
-        $this->$variable = $variable;
+    public function setVariables($variables){
+        $this->variables = $variables;
     }
 
-    public function getVariable(){
-        return $this->$variable;
+    public function getVariables(){
+        return $this->variables;
+    }
+
+    public function setVerb($verb){
+        $this->verb = $verb;
+    }
+
+    public function getVerb(){
+        return $this->verb;
     }
 }
