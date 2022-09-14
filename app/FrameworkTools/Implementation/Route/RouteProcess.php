@@ -4,6 +4,7 @@ namespace App\FrameworkTools\Implementation\Route;
 
 use App\FrameworkTools\ProcessServerElements;
 use App\Controllers\HelloWordController;
+use App\Controllers\InsertDataController;
 
 class RouteProcess{
 
@@ -19,6 +20,15 @@ class RouteProcess{
                     case '/hello-world':
 
                         return (new HelloWordController)->execute();
+                    break;
+                }
+            case 'POST':
+
+                switch ($processServerElements->getRoute()){
+                        
+                    case '/insert-data':
+    
+                        return (new InsertDataController)->execute();
                     break;
                 }
         }
