@@ -5,6 +5,7 @@ namespace App\FrameworkTools\Implementation\Route;
 use App\FrameworkTools\ProcessServerElements;
 use App\Controllers\HelloWordController;
 use App\Controllers\InsertDataController;
+use App\Controllers\TrainQueryController;
 
 class RouteProcess{
 
