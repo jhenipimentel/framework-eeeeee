@@ -59,7 +59,7 @@ class TrainQueryController extends AbstractControllers{
         $databaseConnection = DatabaseConnection::start()->getPDO();
 
         $users = $databaseConnection
-                ->query("SELECT * FROM car WHERE id = '{$valueOfVariable}';")
+                ->query("SELECT * FROM car WHERE id_car = '{$valueOfVariable}';")
                 ->fetchAll();
 
         view($users);
@@ -78,7 +78,7 @@ class TrainQueryController extends AbstractControllers{
         $databaseConnection = DatabaseConnection::start()->getPDO();
 
         $users = $databaseConnection
-                ->query("SELECT * FROM car WHERE id = '{$valueOfVariable}';")
+                ->query("SELECT * FROM car WHERE name = '{$valueOfVariable}';")
                 ->fetchAll();
 
         view($users);
@@ -97,7 +97,7 @@ class TrainQueryController extends AbstractControllers{
         $databaseConnection = DatabaseConnection::start()->getPDO();
 
         $users = $databaseConnection
-                ->query("SELECT * FROM user WHERE name = '{$valueOfVariable}';")
+                ->query("SELECT * FROM seller;")
                 ->fetchAll();
 
         view($users);
@@ -116,7 +116,7 @@ class TrainQueryController extends AbstractControllers{
         $databaseConnection = DatabaseConnection::start()->getPDO();
 
         $users = $databaseConnection
-                ->query("SELECT * FROM user WHERE name = '{$valueOfVariable}';")
+                ->query("SELECT * FROM seller WHERE id_seller = '{$valueOfVariable}';")
                 ->fetchAll();
 
         view($users);
@@ -135,7 +135,7 @@ class TrainQueryController extends AbstractControllers{
         $databaseConnection = DatabaseConnection::start()->getPDO();
 
         $users = $databaseConnection
-                ->query("SELECT * FROM user WHERE name = '{$valueOfVariable}';")
+                ->query("SELECT * FROM seller WHERE name = '{$valueOfVariable}';")
                 ->fetchAll();
 
         view($users);
@@ -154,7 +154,7 @@ class TrainQueryController extends AbstractControllers{
         $databaseConnection = DatabaseConnection::start()->getPDO();
 
         $users = $databaseConnection
-                ->query("SELECT * FROM user WHERE name = '{$valueOfVariable}';")
+                ->querySELECT * FROM car WHERE car.id_car IN (SELECT sells.id_car FROM sells WHERE sells.id_seller = ("SELECT seller.id_seller FROM seller WHERE seller.id_seller = '{$valueOfVariable}'));")
                 ->fetchAll();
 
         view($users);
@@ -173,7 +173,7 @@ class TrainQueryController extends AbstractControllers{
         $databaseConnection = DatabaseConnection::start()->getPDO();
 
         $users = $databaseConnection
-                ->query("SELECT * FROM user WHERE name = '{$valueOfVariable}';")
+                ->query("SELECT * FROM buyer;")
                 ->fetchAll();
 
         view($users);
@@ -192,7 +192,7 @@ class TrainQueryController extends AbstractControllers{
         $databaseConnection = DatabaseConnection::start()->getPDO();
 
         $users = $databaseConnection
-                ->query("SELECT * FROM user WHERE name = '{$valueOfVariable}';")
+                ->query("SELECT * FROM buyer WHERE id_buyer = '{$valueOfVariable}';")
                 ->fetchAll();
 
         view($users);
@@ -211,7 +211,7 @@ class TrainQueryController extends AbstractControllers{
         $databaseConnection = DatabaseConnection::start()->getPDO();
 
         $users = $databaseConnection
-                ->query("SELECT * FROM user WHERE name = '{$valueOfVariable}';")
+                ->query("SELECT * FROM buyer WHERE name = '{$valueOfVariable}';")
                 ->fetchAll();
 
         view($users);
@@ -230,7 +230,7 @@ class TrainQueryController extends AbstractControllers{
         $databaseConnection = DatabaseConnection::start()->getPDO();
 
         $users = $databaseConnection
-                ->query("SELECT * FROM user WHERE name = '{$valueOfVariable}';")
+                ->query("SELECT * FROM car WHERE car.id_car IN ( SELECT sells.id_car FROM sells WHERE sells.id_buyer = (SELECT buyer.id_buyer FROM buyer WHERE buyer.id_buyer = '{$valueOfVariable}'));")
                 ->fetchAll();
 
         view($users);
