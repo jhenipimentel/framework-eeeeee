@@ -1,3 +1,5 @@
+
+DROP DATABASE IF EXISTS frameworksenac;
 CREATE DATABASE frameworksenac;
 use frameworksenac;
 
