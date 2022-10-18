@@ -3,15 +3,17 @@
 namespace App\FrameworkTools\Implementation\Route;
 
 use App\FrameworkTools\ProcessServerElements;
-use App\Controllers\HelloWordController;
-use App\Controllers\InsertDataController;
-use App\Controllers\TrainQueryController;
+use App\FrameworkTools\Implementation\Route\Put;
+use App\FrameworkTools\Implementation\Route\Get;
+use App\FrameworkTools\Implementation\Route\Post;
 
-use App\FrameworkTools\Implementation\Route\GetTrait;
+
 
 class RouteProcess{
 
     use Get;
+    use Put;
+    use Post;
 
     private static $processServerElements;
 
@@ -23,43 +25,16 @@ class RouteProcess{
                            
             case 'GET':
                 return self::get();
-            break;
-
             case 'POST':
                 return self::post();
-            break;
+            case 'PUT':
+                return self::put();
 
                                                                                                                
         }
                 
     }
-    private static function get(){
-        switch (self::$processServerElements->getRoute()){
-                    
-            case '/hello-world':
-                return (new HelloWordController)->execute();
-            break;
+   
 
-            case '/train-query':
-                return (new TrainQueryController)->execute();
-            break;
-
-            
-        }
-    }
-
-    private static function post(){
-        switch (self::$processServerElements->getRoute()){
-                    
-            case '/insert-data':
-                return (new InsertDataController)->execute();
-            break;
-
-            case '/train-query':
-                return (new TrainQueryController)->exec();
-            break;
-
-            
-        }
-    }
+    
 }                                                                                                                 
